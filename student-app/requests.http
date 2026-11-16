@@ -1,0 +1,44 @@
+### IntelliJ IDEA Ultimate: click the green arrow next to a request to send it.
+### In other editions, send the same requests with Postman.
+
+### Hello World
+GET http://localhost:8080/hello
+
+### Hello with a name
+GET http://localhost:8080/hello/Rahim
+
+### Get all students
+GET http://localhost:8080/api/students
+
+### Get one student
+GET http://localhost:8080/api/students/1
+
+### Create a student
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+{ "name": "Nusrat Jahan", "cgpa": 3.66 }
+
+### Update student 1
+PUT http://localhost:8080/api/students/1
+Content-Type: application/json
+
+{ "name": "Rahim Uddin", "cgpa": 3.80 }
+
+### Delete student 1
+DELETE http://localhost:8080/api/students/1
+
+### Search by name
+GET http://localhost:8080/api/students/search?name=ra
+
+### Top students (cgpa >= 3.7)
+GET http://localhost:8080/api/students/top?minCgpa=3.7
+
+### Invalid data: expect 400 Bad Request with error messages
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+{ "name": "", "cgpa": 9.5 }
+
+### Not found: expect 404
+GET http://localhost:8080/api/students/999
